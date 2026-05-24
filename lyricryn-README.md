@@ -1,6 +1,6 @@
 # Lyricryn
 
-I built Lyricryn as the Android companion to my self-hosted [HomeNode](achryrn.site) backend. It streams my personal music library with synced lyrics, offline downloads, and a persistent notification player, no third-party streaming service involved.
+I built Lyricryn as the Android companion to my self-hosted [HomeNode](https://achryrn.site) backend. It streams my personal music library with synced lyrics, offline downloads, and a persistent notification player, no third-party streaming service involved.
 
 > **Private backend.** This app connects to my personal HomeNode instance. There is no public server.
 
