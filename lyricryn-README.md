@@ -10,11 +10,11 @@ I built Lyricryn as the Android companion to my self-hosted [HomeNode](https://g
 
 | Home | Search | Request |
 |---|---|---|
-| ![Home](screenshots/screenshot_home.png) | ![Search](screenshots/screenshot_search.png) | ![Request](screenshots/screenshot_request.png) |
+| ![Home](https://raw.githubusercontent.com/achryrn/Archive/main/screenshots/screenshot_home.png) | ![Search](https://raw.githubusercontent.com/achryrn/Archive/main/screenshots/screenshot_search.png) | ![Request](https://raw.githubusercontent.com/achryrn/Archive/main/screenshots/screenshot_request.png) |
 
 | Library | Downloads | Spotify Import |
 |---|---|---|
-| ![Library](screenshots/screenshot_library.png) | ![Downloads](screenshots/screenshot_downloads.png) | ![Spotify Import](screenshots/screenshot_playlist_import.png) |
+| ![Library](https://raw.githubusercontent.com/achryrn/Archive/main/screenshots/screenshot_library.png) | ![Downloads](https://raw.githubusercontent.com/achryrn/Archive/main/screenshots/screenshot_downloads.png) | ![Spotify Import](https://raw.githubusercontent.com/achryrn/Archive/main/screenshots/screenshot_playlist_import.png) |
 
 ---
 

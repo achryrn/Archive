@@ -66,11 +66,7 @@ homenode/
 
 ## Configuration
 
-All configuration is done through environment variables. Copy `.env.example` to `.env` and fill in every value before starting.
-
-```bash
-cp .env.example .env
-```
+All configuration is done through environment variables. Fill in every value in `.env` before starting.
 
 **Required variables:**
 
@@ -113,7 +109,6 @@ Requirements: Python 3.12+, FFmpeg, SQLite3
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env
 python3 server.py
 ```
 
@@ -128,7 +123,6 @@ I run this with systemd and Nginx. systemd manages the process lifecycle and res
 ## Security notes
 
 - The `.env` file is in `.gitignore` and must never be committed
-- All secrets in `.env.example` are placeholders, generate fresh values before any deployment
 - Leave `REGISTRATION_TOKEN` unset unless you intend to allow new registrations
 
 ---
