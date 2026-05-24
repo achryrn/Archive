@@ -64,14 +64,6 @@ homenode/
 
 ---
 
-## Configuration
-
-All configuration is done through environment variables. Copy `.env.example` to `.env` and fill in every value before starting.
-
-```bash
-cp .env.example .env
-```
-
 **Required variables:**
 
 | Variable | Description |
