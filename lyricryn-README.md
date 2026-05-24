@@ -1,8 +1,8 @@
 # Lyricryn
 
-I built Lyricryn as the Android companion to my self-hosted [HomeNode](https://github.com/achryrn/homenode) backend. It streams my personal music library with synced lyrics, offline downloads, and a persistent notification player — no third-party streaming service involved.
+I built Lyricryn as the Android companion to my self-hosted [HomeNode](https://github.com/achryrn/homenode) backend. It streams my personal music library with synced lyrics, offline downloads, and a persistent notification player, no third-party streaming service involved.
 
-> **Private backend.** This app connects to a personal HomeNode instance. There is no public server.
+> **Private backend.** This app connects to my personal HomeNode instance. There is no public server.
 
 ---
 
@@ -10,11 +10,11 @@ I built Lyricryn as the Android companion to my self-hosted [HomeNode](https://g
 
 | Home | Search | Request |
 |---|---|---|
-| ![Home screen showing recently played and recommended tracks](screenshots/screenshot_home.png) | ![Search screen with results for "Untuk"](screenshots/screenshot_search.png) | ![Request screen searching YouTube for a track to add to the server library](screenshots/screenshot_request.png) |
+| ![Home](screenshots/screenshot_home.png) | ![Search](screenshots/screenshot_search.png) | ![Request](screenshots/screenshot_request.png) |
 
 | Library | Downloads | Spotify Import |
 |---|---|---|
-| ![Library screen showing 847 songs](screenshots/screenshot_library.png) | ![Downloads tab showing 4 offline tracks](screenshots/screenshot_downloads.png) | ![Import from Spotify dialog with a playlist link pasted](screenshots/screenshot_playlist_import.png) |
+| ![Library](screenshots/screenshot_library.png) | ![Downloads](screenshots/screenshot_downloads.png) | ![Spotify Import](screenshots/screenshot_playlist_import.png) |
 
 ---
 
@@ -24,11 +24,11 @@ I built Lyricryn as the Android companion to my self-hosted [HomeNode](https://g
 - Real-time synced lyrics that scroll with playback position
 - Download tracks for offline playback
 - Background playback with media notification controls
-- Library browsing across songs, playlists, albums
+- Library browsing across songs, playlists, and albums
 - Search across the full library
-- Request screen — search YouTube and add tracks directly to the server library
+- Request screen to search YouTube and add tracks directly to the server library
 - Import a Spotify playlist link to sync it to the server library automatically
-- Auth-gated — requires a HomeNode account
+- Auth-gated, requires a HomeNode account
 - Auto-update notifications when a new APK is available on the server
 
 ---
@@ -112,15 +112,15 @@ lyricryn/
 
 ## Configuration
 
-The backend URL is set in `lib/services/api_service.dart`. For a development build use your local server address; for a release build use your production domain with HTTPS.
+The backend URL is set in `lib/services/api_service.dart`. For a development build use your local server address, for a release build use your production domain with HTTPS.
 
-There are no API keys or secrets stored in the app. Authentication is handled via username/password login against the HomeNode auth endpoints, and the session token is stored in `shared_preferences`.
+No API keys or secrets are stored in the app. Authentication is handled via username/password login and the session token is stored in `shared_preferences`.
 
 ---
 
 ## Building
 
-**Requirements:** Flutter SDK 3.x, Android SDK, a connected device or emulator.
+Requirements: Flutter SDK 3.x, Android SDK, a connected device or emulator.
 
 ```bash
 flutter pub get
@@ -128,7 +128,7 @@ flutter run
 flutter build apk --release
 ```
 
-The release APK can be sideloaded or hosted on a HomeNode instance for OTA updates.
+The release APK can be sideloaded or hosted on the HomeNode instance for OTA updates.
 
 ---
 
@@ -148,4 +148,4 @@ The release APK can be sideloaded or hosted on a HomeNode instance for OTA updat
 
 ## Related
 
-- [HomeNode](https://github.com/achryrn/homenode) — The Flask backend this app connects to
+- [HomeNode](https://github.com/achryrn/homenode) - The Flask backend this app connects to
