@@ -148,4 +148,4 @@ The release APK can be sideloaded or hosted on the HomeNode instance for OTA upd
 
 ## Related
 
-- [HomeNode](https://github.com/achryrn/homenode) - The Flask backend this app connects to
+- [HomeNode](https://achryrn.site) - The Flask backend this app connects to
