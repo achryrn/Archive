@@ -1,21 +1,34 @@
 # Lyricryn
 
-An Android music player built with Flutter. Connects to a self-hosted [HomeNode](https://github.com/yourusername/homenode) backend to stream your personal music library with synced lyrics, offline downloads, and a persistent notification player.
+I built Lyricryn as the Android companion to my self-hosted [HomeNode](https://github.com/achryrn/homenode) backend. It streams my personal music library with synced lyrics, offline downloads, and a persistent notification player — no third-party streaming service involved.
 
-> **Private backend.** This app is designed for use with a personal HomeNode instance. There is no public server.
+> **Private backend.** This app connects to a personal HomeNode instance. There is no public server.
+
+---
+
+## Screenshots
+
+| Home | Search | Request |
+|---|---|---|
+| ![Home screen showing recently played and recommended tracks](screenshots/screenshot_home.png) | ![Search screen with results for "Untuk"](screenshots/screenshot_search.png) | ![Request screen searching YouTube for a track to add to the server library](screenshots/screenshot_request.png) |
+
+| Library | Downloads | Spotify Import |
+|---|---|---|
+| ![Library screen showing 847 songs](screenshots/screenshot_library.png) | ![Downloads tab showing 4 offline tracks](screenshots/screenshot_downloads.png) | ![Import from Spotify dialog with a playlist link pasted](screenshots/screenshot_playlist_import.png) |
 
 ---
 
 ## Features
 
-- Stream music from your HomeNode library over LAN or internet
-- Real-time synced lyrics that scroll with playback
+- Stream from my HomeNode library over LAN or internet
+- Real-time synced lyrics that scroll with playback position
 - Download tracks for offline playback
-- Background playback with media notification controls (play, pause, next, prev)
-- Library browsing - songs, playlists, albums
+- Background playback with media notification controls
+- Library browsing across songs, playlists, albums
 - Search across the full library
-- Track request queue - submit requests to the server
-- Auth-gated - requires a HomeNode account
+- Request screen — search YouTube and add tracks directly to the server library
+- Import a Spotify playlist link to sync it to the server library automatically
+- Auth-gated — requires a HomeNode account
 - Auto-update notifications when a new APK is available on the server
 
 ---
@@ -40,75 +53,68 @@ An Android music player built with Flutter. Connects to a self-hosted [HomeNode]
 ```
 lyricryn/
 ├── lib/
-│   ├── main.dart                          # App entry point, provider setup
+│   ├── main.dart
 │   ├── theme/
-│   │   └── app_theme.dart                 # Color scheme and typography
+│   │   └── app_theme.dart
 │   ├── models/
-│   │   ├── song.dart                      # Song data model
-│   │   └── playlist.dart                  # Playlist data model
+│   │   ├── song.dart
+│   │   └── playlist.dart
 │   ├── data/
-│   │   └── mock_data.dart                 # Development stubs
+│   │   └── mock_data.dart
 │   ├── services/
-│   │   ├── api_service.dart               # All HomeNode HTTP calls
-│   │   ├── audio_handler.dart             # just_audio session wrapper
-│   │   ├── audio_focus_manager.dart       # Android audio focus handling
-│   │   ├── download_service.dart          # Track download and local storage
-│   │   ├── notification_service.dart      # Playback notification setup
-│   │   └── update_notification_service.dart  # In-app update prompts
+│   │   ├── api_service.dart
+│   │   ├── audio_handler.dart
+│   │   ├── audio_focus_manager.dart
+│   │   ├── download_service.dart
+│   │   ├── notification_service.dart
+│   │   └── update_notification_service.dart
 │   ├── providers/
-│   │   ├── auth_provider.dart             # Login state and token storage
-│   │   ├── music_provider.dart            # Library data and queue
-│   │   ├── player_provider.dart           # Playback state
-│   │   ├── download_provider.dart         # Download queue state
-│   │   ├── connectivity_provider.dart     # Online/offline detection
-│   │   └── update_provider.dart          # App update check state
+│   │   ├── auth_provider.dart
+│   │   ├── music_provider.dart
+│   │   ├── player_provider.dart
+│   │   ├── download_provider.dart
+│   │   ├── connectivity_provider.dart
+│   │   └── update_provider.dart
 │   ├── screens/
 │   │   ├── auth/
-│   │   │   ├── auth_gate.dart             # Route guard
-│   │   │   ├── login_screen.dart          # Login UI
-│   │   │   └── register_screen.dart       # Registration UI
+│   │   │   ├── auth_gate.dart
+│   │   │   ├── login_screen.dart
+│   │   │   └── register_screen.dart
 │   │   ├── home/
-│   │   │   └── home_screen.dart           # Home feed
+│   │   │   └── home_screen.dart
 │   │   ├── library/
-│   │   │   ├── library_screen.dart        # Full library browser
+│   │   │   ├── library_screen.dart
 │   │   │   └── playlist_detail_screen.dart
 │   │   ├── player/
-│   │   │   └── player_screen.dart         # Full-screen now playing
+│   │   │   └── player_screen.dart
 │   │   ├── search/
-│   │   │   └── search_screen.dart         # Search UI
+│   │   │   └── search_screen.dart
 │   │   ├── lyrics/
-│   │   │   ├── lyrics_screen.dart         # Synced lyrics view
-│   │   │   ├── lyrics_provider.dart       # Lyrics fetch and sync state
-│   │   │   └── lyric_line.dart            # Individual lyric line widget
+│   │   │   ├── lyrics_screen.dart
+│   │   │   ├── lyrics_provider.dart
+│   │   │   └── lyric_line.dart
 │   │   ├── request/
-│   │   │   └── request_screen.dart        # Track request form
-│   │   └── main_shell.dart               # Bottom nav shell
+│   │   │   └── request_screen.dart
+│   │   └── main_shell.dart
 │   └── widgets/
-│       ├── mini_player.dart               # Persistent bottom player bar
-│       ├── song_tile.dart                 # Song list item
-│       ├── artwork_widget.dart            # Album art with fallback
-│       ├── playlist_card.dart             # Playlist grid card
-│       └── add_to_playlist_sheet.dart     # Bottom sheet for playlist add
+│       ├── mini_player.dart
+│       ├── song_tile.dart
+│       ├── artwork_widget.dart
+│       ├── playlist_card.dart
+│       └── add_to_playlist_sheet.dart
 └── android/
     └── app/src/main/kotlin/com/lyricyrn/lyricyrn/
-        ├── MainActivity.kt                # Flutter activity + method channels
-        └── MusicNotificationService.kt    # Foreground service for media controls
+        ├── MainActivity.kt
+        └── MusicNotificationService.kt
 ```
 
 ---
 
 ## Configuration
 
-The app connects to a HomeNode backend. The base URL is set in `lib/services/api_service.dart`.
+The backend URL is set in `lib/services/api_service.dart`. For a development build use your local server address; for a release build use your production domain with HTTPS.
 
-For a development build pointing at a local server:
-```dart
-static const String baseUrl = 'http://192.168.x.x:5000';
-```
-
-For a release build, set this to your production domain with HTTPS.
-
-There are no API keys or secrets stored in the app - authentication is handled via username/password login against the HomeNode auth endpoints, and the session token is stored in `shared_preferences`.
+There are no API keys or secrets stored in the app. Authentication is handled via username/password login against the HomeNode auth endpoints, and the session token is stored in `shared_preferences`.
 
 ---
 
@@ -118,17 +124,15 @@ There are no API keys or secrets stored in the app - authentication is handled v
 
 ```bash
 flutter pub get
-flutter run                    # debug on connected device
-flutter build apk --release    # release APK
+flutter run
+flutter build apk --release
 ```
 
-The release APK can be sideloaded or hosted on your HomeNode instance for OTA updates.
+The release APK can be sideloaded or hosted on a HomeNode instance for OTA updates.
 
 ---
 
 ## Android permissions
-
-Declared in `AndroidManifest.xml`:
 
 | Permission | Reason |
 |---|---|
@@ -144,4 +148,4 @@ Declared in `AndroidManifest.xml`:
 
 ## Related
 
-- [HomeNode](https://github.com/yourusername/homenode) - The Flask backend this app connects to.
+- [HomeNode](https://github.com/achryrn/homenode) — The Flask backend this app connects to
