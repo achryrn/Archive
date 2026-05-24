@@ -1,6 +1,6 @@
 # HomeNode
 
-I built HomeNode as my personal self-hosted web server — the backend that powers everything I run on my own hardware. Music streaming, synced lyrics, authentication, file serving, a portfolio, and study tools, all without depending on any third-party platform.
+I built HomeNode as my personal self-hosted web server, the backend that powers everything I run on my own hardware. Music streaming, synced lyrics, authentication, file serving, a portfolio, and study tools, all without depending on any third-party platform.
 
 > **Private deployment.** This repository documents the architecture and setup process. The live instance is not open for public registration.
 
@@ -8,13 +8,13 @@ I built HomeNode as my personal self-hosted web server — the backend that powe
 
 ## What it does
 
-- **Music streaming** — Serves my personal music library with transcoding, queue management, and offline playlist support
-- **Lyrics sync** — Real-time synced lyrics tied to playback position, backed by a local database with a pipeline for adding new tracks
-- **Authentication** — JWT-based session system with role-based access control and rate limiting
-- **LapLink** — Persistent agent protocol for pairing my laptop to the server and issuing remote commands
-- **Portfolio** — Serves my resume and gallery with per-user access control
-- **Study tools** — Backend for a personal spaced-repetition and study session tracker
-- **Admin analytics** — Request logs and a user activity dashboard
+- **Music streaming**, Serves my personal music library with transcoding, queue management, and offline playlist support
+- **Lyrics sync**, Real-time synced lyrics tied to playback position, backed by a local database with a pipeline for adding new tracks
+- **Authentication**, JWT-based session system with role-based access control and rate limiting
+- **LapLink**, Persistent agent protocol for pairing my laptop to the server and issuing remote commands
+- **Portfolio**, Serves my resume and gallery with per-user access control
+- **Study tools**, Backend for a personal spaced-repetition and study session tracker
+- **Admin analytics**, Request logs and a user activity dashboard
 
 ---
 
@@ -128,11 +128,11 @@ I run this with systemd and Nginx. systemd manages the process lifecycle and res
 ## Security notes
 
 - The `.env` file is in `.gitignore` and must never be committed
-- All secrets in `.env.example` are placeholders — generate fresh values before any deployment
+- All secrets in `.env.example` are placeholders, generate fresh values before any deployment
 - Leave `REGISTRATION_TOKEN` unset unless you intend to allow new registrations
 
 ---
 
 ## Related
 
-- [Lyricryn](https://github.com/achryrn/lyricryn) — The Android app that connects to this backend
+- [Lyricryn](https://github.com/achryrn/lyricryn), The Android app that connects to this backend
