@@ -129,4 +129,4 @@ I run this with systemd and Nginx. systemd manages the process lifecycle and res
 
 ## Related
 
-- [Lyricryn](https://github.com/achryrn/lyricryn) - The Android app that connects to this backend
+- [Lyricryn]([https://github.com/achryrn/lyricryn](https://github.com/achryrn/Archive/blob/main/lyricryn-README.md)) - The Android app that connects to this backend
