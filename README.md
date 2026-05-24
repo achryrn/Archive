@@ -115,16 +115,6 @@ python3 server.py
 
 I run this with systemd and Nginx. systemd manages the process lifecycle and restarts on failure. Nginx sits in front as a reverse proxy and handles TLS termination. `ALLOWED_ORIGINS` should be set to your domain only.
 
----
-
-## Security notes
-
-- The `.env` file is in `.gitignore` and must never be committed
-- All secrets in `.env.example` are placeholders, generate fresh values before any deployment
-- Leave `REGISTRATION_TOKEN` unset unless you intend to allow new registrations
-
----
-
 ## Related
 
 - [Lyricryn](https://github.com/achryrn/lyricryn), The Android app that connects to this backend
